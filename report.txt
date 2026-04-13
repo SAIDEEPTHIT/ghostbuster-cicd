@@ -1,4 +1,4 @@
 GhostBuster Report
-Status: PASSED
-AI Risk Score: 89%
-Details: All validation checks passed
+Status: FAILED
+AI Risk Score: 90%
+Details: Validation failed (see logs)
