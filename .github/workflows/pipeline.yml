@@ -1,0 +1,20 @@
+name: GhostBuster CI/CD
+
+on: [push]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt || true
+
+    - name: Run GhostBuster Checks
+      run: python validator/run_all.py
