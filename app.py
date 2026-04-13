@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import os
 import random
 import re
 import subprocess
@@ -15,11 +16,17 @@ VALIDATOR_SCRIPT = REPO_ROOT / "validator" / "run_all.py"
 
 
 def run_local_validation() -> tuple[bool, str]:
+    env = os.environ.copy()
+    env["PYTHONIOENCODING"] = "utf-8"
+
     result = subprocess.run(
         [sys.executable, str(VALIDATOR_SCRIPT)],
         cwd=str(REPO_ROOT),
         capture_output=True,
         text=True,
+        encoding="utf-8",
+        errors="replace",
+        env=env,
         check=False,
     )
     output = (result.stdout or "").strip()

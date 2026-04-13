@@ -1,4 +1,10 @@
 GhostBuster Report
+<<<<<<< Updated upstream
 Status: FAILED
-AI Risk Score: 82%
+AI Risk Score: 90%
 Details: Validation failed (see logs)
+=======
+Status: PASSED
+AI Risk Score: 89%
+Details: All validation checks passed
+>>>>>>> Stashed changes
